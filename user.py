@@ -13,16 +13,17 @@ class User():
     # params string name
     # params string age
     # params int user_id default None
-    def __init__(self, name, age, user_id = None):
+    def __init__(self, name, email, age, user_id = None):
         global ID
+
+        self.name = name
+        self.email = email
 
         if(user_id == None):
             ID += 1
             self.id = ID
 
-            self.name = name
             self.age = ANO_ATUAL - int(age)
         else:
             self.id = user_id
-            self.name = name
             self.age = age

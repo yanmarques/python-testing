@@ -17,7 +17,7 @@ class DataBase():
             users = []
 
             for iten in DB:
-                users.append(User(iten['name'], iten['age'], iten['id']))
+                users.append(User(iten['name'], iten['email'], iten['age'], iten['id']))
 
             return users
         else:
@@ -26,7 +26,7 @@ class DataBase():
     # Cadastra um usuario
     # params User user
     def store(self, user):
-        itens = {'id' : user.id, 'name' : user.name, 'age' : user.age}
+        itens = {'id' : user.id, 'name' : user.name, 'email' : user.email, 'age' : user.age}
 
         DB.append(itens)
 
@@ -42,7 +42,7 @@ class DataBase():
             for iten in DB:
                 if(iten['id'] == find_user_id['id']):
                     iten['name'] = new_name
-                    user = User(iten['name'], iten['age'], iten['id'])
+                    user = User(iten['name'], iten['email'], iten['age'], iten['id'])
 
         return user
 
